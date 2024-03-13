@@ -37,7 +37,8 @@ function PlaceDetails() {
 
 	async function deleteComment(deletedComment) {
 		await fetch(`http://localhost:5000/places/${place.placeId}/comments/${deletedComment.commentId}`, {
-			method: 'DELETE'
+			method: 'DELETE',
+			credentials: 'include'
 		})
 
 		setPlace({

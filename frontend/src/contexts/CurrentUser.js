@@ -10,12 +10,12 @@ function CurrentUserProvider({ children }){
         const getLoggedInUser = async () => {
             let response = await fetch('http://localhost:5000/authentication/profile', {
                 credentials: 'include'
-            })
-            let user = await response.json()
-            setCurrentUser(user)
+            });
+            let user = await response.json();
+            setCurrentUser(user);
         }
-        getLoggedInUser()
-    }, [])
+        getLoggedInUser();
+    }, []);
 
     return (
         <CurrentUser.Provider value={{ currentUser, setCurrentUser }}>
